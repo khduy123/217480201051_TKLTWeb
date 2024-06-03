@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="So01">Textbox 1:</label>
+    <input type="text" id="So01" name="So01"><br>
+    <label for="So02">Textbox 2:</label>
+    <input type="text" id="So02" name="So02"><br>
+    <label for="Ketqua">Kết quả:</label>
+    <input type="text" id="Ketqua" name="Ketqua" readonly><br>
+
+    <select id="pheptinh" name="pheptinh">
+        <option value="cong">Cộng</option>
+        <option value="tru">Trừ</option>
+        <option value="nhan">Nhân</option>
+        <option value="chia">Chia</option>
+    </select><br>
+
+    <button type="button" onclick="tinh()">Tính</button>
+
+    <script>
+        function tinh(){
+            var so1 = parseFloat(document.getElementById('So01').value);
+            var so2 = parseFloat(document.getElementById('So02').value);
+            var phepTinh = document.getElementById('pheptinh').value;
+            var ketqua;
+            if(phepTinh === "cong"){
+                ketqua = so1 + so2;
+            } else if(phepTinh === "tru"){
+                ketqua = so1 - so2;
+            } else if(phepTinh === "nhan"){
+                ketqua = so1 * so2;
+            } else if(phepTinh === "chia"){
+                ketqua = so1 / so2;
+            }
+            document.getElementById('Ketqua').value = ketqua;
+        }
+    </script>
+</body>
+</html>

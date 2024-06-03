@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thông tin nhân viên</title>
+<style>
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<h2>Thông tin nhân viên</h2>
+<form action="submit.php" method="post">
+    <label for="Hoten">Họ và tên:</label>
+    <input type="text" id="Hoten" name="Hoten" oninput="calculate()">
+
+    <label for="NamVaoLam">Năm vào làm:</label>
+    <input type="text" id="NamVaoLam" name="NamVaoLam" oninput="calculate()">
+
+    <label for="HeSo">Hệ số:</label>
+    <input type="text" id="HeSo" name="HeSo" oninput="calculate()">
+
+    <label for="LuongCoSo">Lương cơ sở:</label>
+    <input type="text" id="LuongCoSo" name="LuongCoSo" oninput="calculate()">
+
+    <label for="LuongCoBan">Lương cơ bản:</label>
+    <input type="text" id="LuongCoBan" name="LuongCoBan">
+
+    <label for="PhuCap">Phụ cấp:</label>
+    <input type="text" id="PhuCap" name="PhuCap">
+
+    <label for="ThamNien">Thâm niên:</label>
+    <input type="text" id="ThamNien" name="ThamNien">
+
+    <label for="ThanhTien">Thành tiền:</label>
+    <input type="text" id="ThanhTien" name="ThanhTien">
+
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    function calculate() {
+        var namVaoLam = parseFloat(document.getElementById('NamVaoLam').value);
+        var heSo = parseFloat(document.getElementById('HeSo').value);
+        var luongCoSo = parseFloat(document.getElementById('LuongCoSo').value);
+
+        var thamNien = new Date().getFullYear() - namVaoLam;
+
+        var luongCoBan = heSo * luongCoSo;
+        var phuCap = 0.25 * luongCoBan; // Phụ cấp là 25% của lương cơ bản
+        var thanhTien = luongCoBan + phuCap;
+
+        document.getElementById('LuongCoBan').value = luongCoBan;
+        document.getElementById('PhuCap').value = phuCap;
+        document.getElementById('ThamNien').value = thamNien;
+        document.getElementById('ThanhTien').value = thanhTien;
+    }
+</script>
+
+</body>
+</html>

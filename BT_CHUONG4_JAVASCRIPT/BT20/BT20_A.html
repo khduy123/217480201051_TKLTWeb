@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tích</title>
+</head>
+<body style="font-family: arial; background-color: lavender">
+<h1>Bạn hãy nhập vào số lượng và giá:</h1>
+Số lượng: <input name="SoLuong" id="SoLuong">
+Đơn giá: <input name="DonGia" id="DonGia"
+onKeyUp="document.getElementById('ThanhTien').value = parseFloat(document.getElementById('SoLuong').value) * parseFloat(document.getElementById('DonGia').value) || 0"><hr>
+Thành tiền: <input name="ThanhTien" id="ThanhTien"> USD
+</body>
+</html>

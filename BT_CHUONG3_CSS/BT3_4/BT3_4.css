@@ -1,0 +1,19 @@
+table, th, td{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 14px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+#misc{
+    background-color: aqua;
+}
+
+#misc1{
+    background-color: blue;
+}
+
+#misc2{
+    background-color: blue;
+}

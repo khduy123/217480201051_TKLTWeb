@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay đổi giá trị của thuộc tính</title>
+</head>
+<body>
+    <h2>Hãy nhập hai số và chọn phép tính</h2>
+    <input type="text" id="SoHang1"> 
+    <input type="text" id="SoHang2"> =
+    <input type="text" id="KetQua">
+    <br>
+    <input type="radio" name="pheptinh" value="cong" id="cong" checked>
+    <label for="cong">Cộng</label>
+    <br>
+    <input type="radio" name="pheptinh" value="tru" id="tru">
+    <label for="tru">Trừ</label>
+    <br>
+    <input type="radio" name="pheptinh" value="nhan" id="nhan">
+    <label for="nhan">Nhân</label>
+    <br>
+    <input type="radio" name="pheptinh" value="chia" id="chia">
+    <label for="chia">Chia</label>
+    <br>
+    <input type="button" value="Tính" onclick="tinh()">
+    
+    <script>
+        function tinh() {
+            var soHang1 = parseFloat(document.getElementById("SoHang1").value);
+            var soHang2 = parseFloat(document.getElementById("SoHang2").value);
+            var phepTinh = document.querySelector('input[name="pheptinh"]:checked').value;
+            var ketQua;
+            switch(phepTinh) {
+                case "cong":
+                    ketQua = soHang1 + soHang2;
+                    break;
+                case "tru":
+                    ketQua = soHang1 - soHang2;
+                    break;
+                case "nhan":
+                    ketQua = soHang1 * soHang2;
+                    break;
+                case "chia":
+                    if (soHang2 !== 0) {
+                        ketQua = soHang1 / soHang2;
+                    } else {
+                        alert("Không thể chia cho 0!");
+                        return;
+                    }
+                    break;
+                default:
+                    alert("Vui lòng chọn phép tính");
+                    return;
+            }
+            document.getElementById("KetQua").value = ketQua;
+        }
+    </script>
+</body>
+</html>

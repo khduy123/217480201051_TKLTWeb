@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay đổi giá trị của thuộc tính</title>
+</head>
+<body>
+    <h2>Hãy nhập hai số và nhấn vào nút Tính tổng</h2>
+    <p>Số hạng 1:</p>
+    <input type="text" id="SoHang1">
+    <p>Số hạng 2:</p>
+    <input type="text" id="SoHang2"> 
+    <p>Kết quả:</p>
+    <input type="text" id="KetQua">
+    <br>
+    <input type="button" value="Cộng" onclick="tinhTong()">
+    <br>
+    <input type="button" value="Trừ" onclick="tinhHieu()">
+    <br>
+    <input type="button" value="Nhân" onclick="tinhTich()">
+    <br>
+    <input type="button" value="Chia" onclick="tinhThuong()">
+    
+    <script>
+        function tinhTong() {
+            var soHang1 = parseFloat(document.getElementById("SoHang1").value);
+            var soHang2 = parseFloat(document.getElementById("SoHang2").value);
+            document.getElementById("KetQua").value = soHang1 + soHang2;
+        }
+
+        function tinhHieu() {
+            var soHang1 = parseFloat(document.getElementById("SoHang1").value);
+            var soHang2 = parseFloat(document.getElementById("SoHang2").value);
+            document.getElementById("KetQua").value = soHang1 - soHang2;
+        }
+
+        function tinhTich() {
+            var soHang1 = parseFloat(document.getElementById("SoHang1").value);
+            var soHang2 = parseFloat(document.getElementById("SoHang2").value);
+            document.getElementById("KetQua").value = soHang1 * soHang2;
+        }
+
+        function tinhThuong() {
+            var soHang1 = parseFloat(document.getElementById("SoHang1").value);
+            var soHang2 = parseFloat(document.getElementById("SoHang2").value);
+            if (soHang2 !== 0) {
+                document.getElementById("KetQua").value = soHang1 / soHang2;
+            } else {
+                alert("Không thể chia cho 0!");
+            }
+        }
+    </script>
+</body>
+</html>

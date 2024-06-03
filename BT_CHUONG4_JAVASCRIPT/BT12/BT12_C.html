@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đọc giá trị trong Textbox</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="Ho">Họ:</label>
+        <input type="text" id="Ho" name="Ho" value=""><br><br>
+        
+        <label for="Ten">Tên:</label>
+        <input type="text" id="Ten" name="Ten" value=""><br><br>
+        
+        <input type="button" name="Hienthi" value="Hiển thị" onClick="hienthi()">
+    </form>
+
+    <script>
+        function hienthi() {
+            var ho = document.getElementById('Ho').value;
+            var ten = document.getElementById('Ten').value;
+            var hoTen = ho + " " + ten;
+            alert('Họ và tên: ' + hoTen);
+        }
+    </script>
+</body>
+</html>

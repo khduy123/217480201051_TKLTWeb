@@ -1,0 +1,12 @@
+
+  .container {
+    border: 2px solid black; 
+    padding: 20px; 
+    width: 50%; 
+    margin: 0 auto;
+    background-color: pink; 
+  }
+  ol {
+    font-size: 14px; 
+    color: black; 
+  }

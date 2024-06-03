@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 18</title>
+</head>
+<body style="font-family: Arial, sans-serif;">
+    Số ký tự đã gõ: <input type="text" id="SoKyTu" readonly> <br>
+    <textarea id="NoiDung" cols="50" rows="10" onKeyUp="KiemTra();"></textarea> 
+    
+    <script>
+        function KiemTra() {
+            var noiDung = document.getElementById("NoiDung").value;
+            if (noiDung.length > 200) {
+                alert("Bạn đã gõ quá số ký tự cho phép!");
+                document.getElementById("NoiDung").value = noiDung.substring(0, 200); // Giới hạn độ dài nội dung
+            }
+            document.getElementById("SoKyTu").value = noiDung.length;
+        }
+    </script>
+</body>
+</html>

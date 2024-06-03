@@ -1,0 +1,17 @@
+
+    body{
+        background-color: yellow;
+    }
+    ol  li {
+        color: purple;
+    }
+    ul li {
+        color: blue;
+    }
+h1{
+            text-align: center; 
+            font-family: 'Tahoma'; 
+            font-weight: bolder; 
+            color: red;
+            font-size: 25px;
+}

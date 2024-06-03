@@ -1,0 +1,22 @@
+table, th, td{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 14px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+.cot1{
+    background-color: violet;
+}
+.cot2{
+    background-color: aquamarine;
+}
+body{
+    margin: 0;
+    padding: 0;
+}

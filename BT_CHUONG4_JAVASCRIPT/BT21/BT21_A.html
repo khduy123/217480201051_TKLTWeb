@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài tập JavaScript 21A</title>
+</head>
+<body>
+
+<label for="textbox1">Textbox 1:</label>
+<input type="text" id="So01" name="So01"><br>
+
+<label for="textbox2">Textbox 2:</label>
+<input type="text" id="So02" name="So02"><br>
+
+<label for="textbox3">Kết quả:</label>
+<input type="text" id="Ketqua" name="Ketqua" readonly><br>
+
+<button type="button" onclick="cong()">Cộng</button>
+<button type="button" onclick="tru()">Trừ</button>
+<button type="button" onclick="nhan()">Nhân</button>
+<button type="button" onclick="chia()">Chia</button>
+
+<script>
+function cong() {
+    var so1 = parseFloat(document.getElementById('So01').value);
+    var so2 = parseFloat(document.getElementById('So02').value);
+    var ketqua = so1 + so2;
+    document.getElementById('Ketqua').value = ketqua;
+}
+
+function tru() {
+    var so1 = parseFloat(document.getElementById('So01').value);
+    var so2 = parseFloat(document.getElementById('So02').value);
+    var ketqua = so1 - so2;
+    document.getElementById('Ketqua').value = ketqua;
+}
+
+function nhan() {
+    var so1 = parseFloat(document.getElementById('So01').value);
+    var so2 = parseFloat(document.getElementById('So02').value);
+    var ketqua = so1 * so2;
+    document.getElementById('Ketqua').value = ketqua;
+}
+
+function chia() {
+    var so1 = parseFloat(document.getElementById('So01').value);
+    var so2 = parseFloat(document.getElementById('So02').value);
+    var ketqua = so1 / so2;
+    document.getElementById('Ketqua').value = ketqua;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tính Lương</title>
+<style>
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+<form id="salaryForm">
+    <label for="Hoten">Họ và tên:</label>
+    <input type="text" id="Hoten" name="Hoten" oninput="calculateSalary()"><br>
+
+    <label for="NamVaoLam">Năm vào làm:</label>
+    <input type="text" id="NamVaoLam" name="NamVaoLam" oninput="calculateSalary()"><br>
+
+    <label for="HeSo">Hệ số:</label>
+    <input type="text" id="HeSo" name="HeSo" oninput="calculateSalary()"><br>
+
+    <label for="LuongCoSo">Lương cơ sở:</label>
+    <input type="text" id="LuongCoSo" name="LuongCoSo" oninput="calculateSalary()"><br>
+
+    <label for="LuongCoBan">Lương cơ bản:</label>
+    <input type="text" id="LuongCoBan" name="LuongCoBan" readonly><br>
+
+    <label for="PhuCap">Phụ cấp:</label>
+    <input type="text" id="PhuCap" name="PhuCap" readonly><br>
+
+    <label for="ThamNien">Thâm niên:</label>
+    <input type="text" id="ThamNien" name="ThamNien" readonly><br>
+
+    <button type="button" onclick="calculateSalary()">Tính lương</button><br>
+
+    <label for="ThanhTien">Thành tiền:</label>
+    <input type="text" id="ThanhTien" name="ThanhTien" readonly><br>
+</form>
+
+<script>
+    function calculateSalary() {
+        var hoten = document.getElementById("Hoten").value;
+        var namVaoLam = parseFloat(document.getElementById("NamVaoLam").value);
+        var heSo = parseFloat(document.getElementById("HeSo").value);
+        var luongCoSo = parseFloat(document.getElementById("LuongCoSo").value);
+
+        var luongCoBan = luongCoSo * heSo;
+        var phuCap = 0;
+        var thamNien = new Date().getFullYear() - namVaoLam;
+
+        if (thamNien >= 5) {
+            phuCap = 500000;
+        }
+
+        var thanhTien = luongCoBan + phuCap;
+
+        document.getElementById("LuongCoBan").value = luongCoBan;
+        document.getElementById("PhuCap").value = phuCap;
+        document.getElementById("ThamNien").value = thamNien;
+        document.getElementById("ThanhTien").value = thanhTien;
+    }
+</script>
+</body>
+</html>

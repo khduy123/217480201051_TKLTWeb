@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="So01">Textbox 1:</label>
+    <input type="text" id="So01" name="So01"><br>
+    <label for="So02">Textbox 2:</label>
+    <input type="text" id="So02" name="So02"><br>
+    <label for="Ketqua">Kết quả:</label>
+    <input type="text" id="Ketqua" name="Ketqua" readonly><br>
+
+    <input type="radio" id="option1" name="options" value="cong">
+    <label for="option1">Cộng</label><br>
+    <input type="radio" id="option2" name="options" value="tru">
+    <label for="option2">Trừ</label><br>
+    <input type="radio" id="option3" name="options" value="nhan">
+    <label for="option3">Nhân</label><br>
+    <input type="radio" id="option4" name="options" value="chia">
+    <label for="option4">Chia</label><br>
+
+    <button type="button" onclick="tinh()">Tính</button>
+
+    <script>
+        function tinh(){
+            var so1 = parseFloat(document.getElementById('So01').value);
+            var so2 = parseFloat(document.getElementById('So02').value);
+            var phepTinh = document.querySelector('input[name="options"]:checked').value;
+            var ketqua;
+            if(phepTinh === "cong"){
+                ketqua = so1 + so2;
+            } else if(phepTinh === "tru"){
+                ketqua = so1 - so2;
+            } else if(phepTinh === "nhan"){
+                ketqua = so1 * so2;
+            } else if(phepTinh === "chia"){
+                ketqua = so1 / so2;
+            }
+            document.getElementById('Ketqua').value = ketqua;
+        }
+    </script>
+</body>
+</html>

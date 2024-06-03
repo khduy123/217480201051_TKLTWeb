@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập dữ liệu cần liệt kê</title>
+    <style>
+        h1 {
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form method ="post" action="List.php">
+    
+    <h1>NHẬP DỮ LIỆT CẦN LIỆT KÊ</h1>
+    <hr>
+    <p><b>Chọn dữ liệu:</b>
+    <br>
+
+    <select size="4" name="equips" multiple>
+        <option value="Hàng hóa">Hàng hóa</option>
+        <option value="Khách hàng">Khách hàng</option>
+        <option value="Nhà sản xuất">Nhà sản xuất</option>
+        <option value="Hóa đơn">Hóa đơn</option>
+    </p>
+    </select>
+    <br>
+        
+    <input type="button" value="In dữ liệu">
+    </form>
+</body>
+</html>
